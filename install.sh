@@ -40,7 +40,7 @@ cd $PWD
 git clone https://github.com/rupa/z.git
 
 # install fzf
-if [ ! -f ~/.fzf.zsh ]; then
+if [ ! -d ~/.fzf ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install
 fi
