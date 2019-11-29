@@ -9,37 +9,42 @@ cd super_vim/plugins/YouCompleteMe
 ./install.py --go-completer --ts-completer
 cd $PWD
 
+# install tmux
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install zsh
+    brew install tmux
+    brew install the_silver_searcher
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+    yum install zsh -y
+    yum install tmux -y
+    yum install the_silver_searcher -y
+fi
+
 # config zsh
-ln -sf ~/super_terminal/zshrc ~/.zshrc
-brew install zsh
 chsh -s $( which zsh )
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-OMZ_P=~/.oh-my-zsh/custom/plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions ${OMZ_P}/zsh-autosuggestions
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+ln -sf ~/super_terminal/zshrc ~/.zshrc
 
-install powerfonts
+OMZ_C=~/.oh-my-zsh/custom/
+git clone https://github.com/zsh-users/zsh-autosuggestions ${OMZ_C}/plugins/zsh-autosuggestions
+git clone https://github.com/bhilburn/powerlevel9k.git ${OMZ_C}/themes/powerlevel9k
+
+# install powerfonts
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
 ./install.sh
-
 cd $PWD
 
 # install z
 git clone https://github.com/rupa/z.git
 
 # install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
-# install tmux
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    source mac.sh
-else
-    echo "third party tools not installed"
+if [ ! -f ~/.fzf.zsh ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
 fi
 
+# config tmux
 ln -sf ~/super_terminal/tmux.conf ~/.tmux.conf
-
 set +e

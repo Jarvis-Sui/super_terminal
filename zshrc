@@ -1,5 +1,5 @@
 export TERM="xterm-256color"
-export ZSH="/Users/jsui/.oh-my-zsh"
+export ZSH=$HOME/".oh-my-zsh"
 export LC_ALL=en_US.UTF-8
 
 PWD=~/super_terminal
