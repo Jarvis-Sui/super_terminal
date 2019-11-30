@@ -2,7 +2,7 @@ export TERM="xterm-256color"
 export ZSH=$HOME/".oh-my-zsh"
 export LC_ALL=en_US.UTF-8
 
-PWD=~/super_terminal
+DIR=~/super_terminal
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -13,12 +13,12 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-[ -f ${PWD}/z/z.sh ] && source ${PWD}/z/z.sh
+[ -f ${DIR}/z/z.sh ] && source ${DIR}/z/z.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # POWERLEVEL9K configure
-source ${PWD}/powerlevel9k.sh
+source ${DIR}/powerlevel9k.sh
 
 # # virtualenvwrapper
 # export VIRTUALENVWRAPPER_VIRTUALENV=/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenv
