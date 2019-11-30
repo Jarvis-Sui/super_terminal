@@ -53,6 +53,14 @@ ln -sf ~/super_terminal/tmux.conf ~/.tmux.conf
 # install powerline for tmux
 pip install --user powerline-status
 
+# install cpu/mem monitor for tmux
+git clone https://github.com/thewtex/tmux-mem-cpu-load.git
+cd tmux-mem-cpu-load
+cmake .
+make
+make install
+cd $PWD
+
 # install the silver searcher (ag command)
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install the_silver_searcher
