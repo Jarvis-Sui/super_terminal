@@ -19,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 # POWERLEVEL9K configure
 source ${DIR}/powerlevel9k.sh
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
 # # virtualenvwrapper
 # export VIRTUALENVWRAPPER_VIRTUALENV=/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenv

@@ -12,12 +12,8 @@ cd $PWD
 # install tmux
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install zsh
-    brew install tmux
-    brew install the_silver_searcher
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     yum install zsh -y
-    yum install tmux -y
-    yum install the_silver_searcher -y
 fi
 
 # config zsh
@@ -45,6 +41,23 @@ if [ ! -d ~/.fzf ]; then
     ~/.fzf/install
 fi
 
-# config tmux
+# install tmux
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install tmux
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+    yum install tmux -y
+fi
+
 ln -sf ~/super_terminal/tmux.conf ~/.tmux.conf
+
+# install powerline for tmux
+pip install --user powerline-status
+
+# install the silver searcher (ag command)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install the_silver_searcher
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+    yum install the_silver_searcher -y
+fi
+
 set +e
