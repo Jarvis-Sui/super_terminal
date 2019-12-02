@@ -21,7 +21,7 @@ source $ZSH/oh-my-zsh.sh
 source ${DIR}/powerlevel9k.sh
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
-# # virtualenvwrapper
-# export VIRTUALENVWRAPPER_VIRTUALENV=/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenv
-# source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
+# virtualenvwrapper
+export VIRTUALENVWRAPPER_VIRTUALENV=/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenv
+source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 
