@@ -22,9 +22,9 @@ chsh -s $( which zsh )
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 ln -sf ~/super_terminal/zshrc ~/.zshrc
 
-OMZ_C=~/.oh-my-zsh/custom/
+OMZ_C=~/.oh-my-zsh/custom
 git clone https://github.com/zsh-users/zsh-autosuggestions ${OMZ_C}/plugins/zsh-autosuggestions
-git clone https://github.com/bhilburn/powerlevel10k.git ${OMZ_C}/themes/powerlevel10k
+git clone https://github.com/romkatv/powerlevel10k.git ${OMZ_C}/themes/powerlevel10k
 
 # install powerfonts
 git clone https://github.com/powerline/fonts.git --depth=1
