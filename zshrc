@@ -30,8 +30,11 @@ PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export VIRTUALENVWRAPPER_VIRTUALENV=/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenv
 source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 
+# go
+export PATH=$PATH:/usr/local/go/bin
+
 mkcd() {
-    mkdir "$1"
+    mkdir -p "$1"
     cd "$1"
 }
 
