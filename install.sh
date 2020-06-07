@@ -34,6 +34,9 @@ cd $PWD
 
 # install z
 git clone https://github.com/rupa/z.git
+chmod +x z/z.sh
+cp z/z.sh /usr/local/bin
+cp z/z.1 /usr/local/share/man/man1
 
 # install fzf
 if [ ! -d ~/.fzf ]; then
