@@ -38,3 +38,5 @@ mkcd() {
     cd "$1"
 }
 
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=122'
+
