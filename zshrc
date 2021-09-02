@@ -24,11 +24,11 @@ export NVM_DIR="$HOME/.nvm"
 
 # POWERLEVEL9K configure
 source ${DIR}/powerlevel9k.sh
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+PATH="/usr/local/opt/python@3.7/bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
 # virtualenvwrapper
-export VIRTUALENVWRAPPER_VIRTUALENV=/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenv
-source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_VIRTUALENV=/Users/suijun/Library/Python/2.7/bin/virtualenv
+source /Users/suijun/Library/Python/2.7/bin/virtualenvwrapper.sh
 
 # go
 export PATH=$PATH:/usr/local/go/bin
