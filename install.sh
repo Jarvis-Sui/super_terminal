@@ -1,14 +1,5 @@
 set -e
 
-# config vim
-PWD=$( pwd )
-git clone --recurse-submodules -j16 https://github.com/Jarvis-Sui/super_vim.git
-ln -s $PWD/super_vim ~/.super_vim
-sh super_vim/install.sh
-cd super_vim/plugins/YouCompleteMe
-./install.py --go-completer --ts-completer
-cd $PWD
-
 # install tmux
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install zsh
@@ -25,6 +16,7 @@ ln -sf ~/super_terminal/zshrc ~/.zshrc
 OMZ_C=~/.oh-my-zsh/custom
 git clone https://github.com/zsh-users/zsh-autosuggestions ${OMZ_C}/plugins/zsh-autosuggestions
 git clone https://github.com/romkatv/powerlevel10k.git ${OMZ_C}/themes/powerlevel10k
+ln -sf ~/super_terminal/p10k.zsh ~/.p10k.zsh
 
 # install powerfonts
 git clone https://github.com/powerline/fonts.git --depth=1
@@ -64,11 +56,20 @@ make
 make install
 cd $PWD
 
-# install the silver searcher (ag command)
+# install the dependencies
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install the_silver_searcher
+    brew install ripgrep
+    brew install tree-sitter
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     yum install the_silver_searcher -y
 fi
+
+# config vim
+mkdir -p ~/.config/
+git clone git@github.com:Jarvis-Sui/nvim.git ~/.config/nvim
+
+# install plug vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 set +e
